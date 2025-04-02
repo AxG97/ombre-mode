@@ -3,196 +3,178 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ombré Mode - Coming Soon</title>
+    <title>Ombré Mode | Coming Soon</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;600&display=swap');
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        @import url('https://fonts.googleapis.com/css2?family=Futura:wght@400;500;700&display=swap');
+        @font-face {
+            font-family: 'Montreal';
+            src: url('https://fonts.cdnfonts.com/css/neue-montreal') format('woff2');
+            font-weight: normal;
+            font-style: normal;
         }
         
         body {
-            font-family: 'Montserrat', sans-serif;
-            background-color: #f9f5f0;
-            color: #333;
+            font-family: 'Futura', sans-serif;
+            background: 
+                linear-gradient(rgba(30, 30, 30, 0.9), rgba(30, 30, 30, 0.9)),
+                url('https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=4000&auto=format&fit=crop') center/cover no-repeat;
+            color: #E6D6B9;
             height: 100vh;
-            display: flex;
-            flex-direction: column;
-            overflow-x: hidden;
-        }
-        
-        .header {
-            padding: 2rem;
-            text-align: center;
-        }
-        
-        .logo {
-            font-family: 'Playfair Display', serif;
-            font-size: 3.5rem;
-            font-weight: 700;
-            letter-spacing: 2px;
-            background: linear-gradient(90deg, #d4a373, #a98467, #6c584c);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            margin-bottom: 1rem;
-        }
-        
-        .coming-soon {
+            margin: 0;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            flex-grow: 1;
             text-align: center;
-            padding: 0 2rem;
+            overflow: hidden;
         }
-        
-        .title {
-            font-family: 'Playfair Display', serif;
-            font-size: 4rem;
-            font-weight: 400;
-            margin-bottom: 3rem;
+
+        .logo {
+            font-family: 'Montreal', sans-serif;
+            font-size: 4.5rem;
+            letter-spacing: 1px;
+            color: #E6D6B9;
+            margin-bottom: 4rem;
+            text-transform: uppercase;
             position: relative;
         }
-        
-        .title::after {
+
+        .logo::after {
             content: '';
             position: absolute;
-            bottom: -1rem;
+            bottom: -1.5rem;
             left: 50%;
             transform: translateX(-50%);
-            width: 100px;
-            height: 2px;
-            background: linear-gradient(90deg, #d4a373, #a98467, #6c584c);
+            width: 120px;
+            height: 1px;
+            background: #E6D6B9;
+            opacity: 0.5;
         }
-        
+
+        .coming-soon {
+            font-size: 3.5rem;
+            font-weight: 300;
+            letter-spacing: 3px;
+            margin-bottom: 5rem;
+            text-transform: uppercase;
+        }
+
         .signup-box {
-            background: white;
-            padding: 2.5rem;
-            border-radius: 8px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-            width: 100%;
+            background: rgba(20, 20, 20, 0.8);
+            border: 1px solid rgba(230, 214, 185, 0.2);
+            padding: 3rem;
+            width: 90%;
             max-width: 500px;
-            margin-bottom: 3rem;
+            margin-bottom: 4rem;
         }
-        
-        .signup-title {
-            font-size: 1.2rem;
-            margin-bottom: 1.5rem;
-            color: #6c584c;
+
+        .signup-text {
+            font-size: 1rem;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+            letter-spacing: 0.5px;
         }
-        
+
         .input-group {
             margin-bottom: 1.5rem;
         }
-        
+
         input {
             width: 100%;
             padding: 1rem;
-            border: 1px solid #e9ecef;
-            border-radius: 4px;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 1rem;
-            transition: all 0.3s ease;
+            background: transparent;
+            border: 1px solid #E6D6B9;
+            color: #E6D6B9;
+            font-family: 'Futura', sans-serif;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
         }
-        
-        input:focus {
-            outline: none;
-            border-color: #d4a373;
-            box-shadow: 0 0 0 3px rgba(212, 163, 115, 0.2);
+
+        input::placeholder {
+            color: rgba(230, 214, 185, 0.6);
         }
-        
+
         button {
-            background: linear-gradient(90deg, #d4a373, #a98467);
-            color: white;
+            background: #E6D6B9;
+            color: #1E1E1E;
             border: none;
-            padding: 1rem 2rem;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 1rem;
-            font-weight: 600;
-            border-radius: 4px;
+            padding: 1rem 0;
+            width: 100%;
+            font-family: 'Montreal', sans-serif;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
             cursor: pointer;
             transition: all 0.3s ease;
-            width: 100%;
-            text-transform: uppercase;
-            letter-spacing: 1px;
         }
-        
+
         button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(169, 132, 103, 0.3);
+            background: #D4C29E;
         }
-        
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-            margin-top: 2rem;
+
+        .instagram-box {
+            border: 1px solid #E6D6B9;
+            padding: 1.5rem;
+            width: 90%;
+            max-width: 500px;
+            font-size: 0.9rem;
+            letter-spacing: 0.5px;
+            line-height: 1.6;
         }
-        
-        .social-icon {
-            color: #6c584c;
-            font-size: 1.5rem;
-            transition: all 0.3s ease;
+
+        .instagram-handle {
+            font-weight: 700;
+            color: #E6D6B9;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 0.5rem;
         }
-        
-        .social-icon:hover {
-            color: #d4a373;
-            transform: translateY(-3px);
-        }
-        
+
         @media (max-width: 768px) {
             .logo {
-                font-size: 2.5rem;
+                font-size: 3rem;
+                margin-bottom: 3rem;
             }
             
-            .title {
+            .coming-soon {
                 font-size: 2.5rem;
+                margin-bottom: 3rem;
             }
             
             .signup-box {
-                padding: 1.5rem;
+                padding: 2rem;
             }
         }
     </style>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <header class="header">
-        <div class="logo">Ombré Mode</div>
-    </header>
+    <div class="logo">Ombré Mode</div>
     
-    <main class="coming-soon">
-        <h1 class="title">Coming Soon...</h1>
-        
-        <div class="signup-box">
-            <h2 class="signup-title">Join our exclusive list</h2>
-            <form id="signup-form">
-                <div class="input-group">
-                    <input type="email" placeholder="Your email address" required>
-                </div>
-                <div class="input-group">
-                    <input type="text" placeholder="Instagram handle (optional)">
-                </div>
-                <button type="submit">Notify Me</button>
-            </form>
-        </div>
-        
-        <div class="social-links">
-            <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-            <a href="#" class="social-icon"><i class="fab fa-pinterest-p"></i></a>
-            <a href="#" class="social-icon"><i class="fab fa-tiktok"></i></a>
-        </div>
-    </main>
+    <div class="coming-soon">Coming Soon</div>
     
+    <div class="signup-box">
+        <p class="signup-text">Be the first to know about our exclusive launches. Enter your details below for updates.</p>
+        
+        <form id="signup-form">
+            <div class="input-group">
+                <input type="email" placeholder="Email Address" required>
+            </div>
+            <div class="input-group">
+                <input type="tel" placeholder="Phone Number (Optional)">
+            </div>
+            <button type="submit">Join The Waitlist</button>
+        </form>
+    </div>
+    
+    <div class="instagram-box">
+        Follow <a href="https://instagram.com/ombremode" class="instagram-handle">@ombremode</a> for previews of upcoming collections and direct messaging.
+    </div>
+
     <script>
         document.getElementById('signup-form').addEventListener('submit', function(e) {
             e.preventDefault();
-            // Here you would typically send the data to your server
-            alert('Thank you for joining our list! We\'ll be in touch soon.');
+            alert('Thank you for joining our waitlist. We\'ll be in touch soon.');
             this.reset();
         });
     </script>
