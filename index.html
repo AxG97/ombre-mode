@@ -1,8 +1,3 @@
-Site
-Aman Gill
-​
-You
-​
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,16 +9,16 @@ You
         @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap');
         
         :root {
-            --gold: #B8860B; /* Darker, richer gold */
+            --gold: #B8860B;
             --gold-light: #DAA520;
             --gold-dark: #8B6914;
-            --brown-dark: #1A120B; /* Darker brown for night sky */
-            --brown-translucent: rgba(26, 18, 11, 0.9);
+            --navy-dark: #0A192F; /* Dark navy background */
+            --navy-translucent: rgba(10, 25, 47, 0.9);
         }
         
         body {
             font-family: 'Montserrat', sans-serif;
-            background: var(--brown-dark);
+            background: var(--navy-dark);
             color: var(--gold);
             min-height: 100vh;
             margin: 0;
@@ -44,7 +39,7 @@ You
             padding: 0 20px;
             margin: auto;
             position: relative;
-            z-index: 1; /* Ensure content stays above stars */
+            z-index: 1;
         }
         
         .page-background {
@@ -56,19 +51,19 @@ You
             background: 
                 radial-gradient(circle at top right, rgba(184, 134, 11, 0.05), transparent 400px),
                 radial-gradient(circle at bottom left, rgba(139, 105, 20, 0.03), transparent 400px),
-                linear-gradient(45deg, #1A120B, #26190F); /* Darker marbled effect for night sky */
+                linear-gradient(45deg, #0A192F, #1E3347); _
+
             z-index: 0;
             opacity: 0.95;
         }
 
-        /* Starry Night Effect */
         .stars {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            z-index: 0; /* Behind content */
+            z-index: 0;
             pointer-events: none;
         }
 
@@ -76,18 +71,18 @@ You
             position: absolute;
             background: var(--gold);
             border-radius: 50%;
-            opacity: 0.5;
-            animation: twinkle 2s infinite ease-in-out;
+            opacity: 0.6;
+            animation: twinkle 3s infinite ease-in-out;
         }
 
         .star:nth-child(odd) {
             background: var(--gold-light);
-            animation-duration: 3s;
+            animation-duration: 4s;
         }
 
         @keyframes twinkle {
-            0%, 100% { opacity: 0.2; transform: scale(0.7); }
-            50% { opacity: 0.8; transform: scale(1); }
+            0%, 100% { opacity: 0.3; transform: scale(0.8); }
+            50% { opacity: 0.9; transform: scale(1); }
         }
 
         .logo {
@@ -107,11 +102,11 @@ You
             letter-spacing: 10px;
             margin-bottom: 4rem;
             text-transform: uppercase;
-            color: #F5F5F5; /* Off-white for contrast */
+            color: #F5F5F5;
         }
 
         .signup-box {
-            background: var(--brown-translucent);
+            background: var(--navy-translucent);
             border: 1px solid var(--gold-dark);
             box-shadow: 0 12px 40px rgba(0,0,0,0.4);
             padding: 3rem;
@@ -121,114 +116,8 @@ You
             backdrop-filter: blur(8px);
         }
 
-        .signup-text {
-            font-size: 1rem;
-            margin: 0 auto 2rem;
-            line-height: 1.8;
-            letter-spacing: 1px;
-            color: #F5F5F5;
-        }
-
-        .input-group {
-            margin: 0 auto 1.5rem;
-            width: 100%;
-            position: relative;
-        }
-
-        input {
-            width: calc(100% - 2rem);
-            padding: 1rem;
-            background: transparent;
-            border: 1px solid var(--gold-dark);
-            color: #F5F5F5;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 0.9rem;
-            margin: 0 auto 1rem;
-            display: block;
-            transition: all 0.3s ease;
-        }
-
-        input:focus {
-            outline: none;
-            border-color: var(--gold);
-            box-shadow: 0 0 10px rgba(184, 134, 11, 0.3);
-        }
-
-        input::placeholder {
-            color: rgba(245, 245, 245, 0.6);
-            text-align: center;
-        }
-
-        button {
-            background: var(--gold);
-            color: #1A120B; /* Darker brown text for contrast */
-            border: none;
-            padding: 1rem 0;
-            width: 100%;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 0.9rem;
-            font-weight: 500;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        button:hover {
-            background: var(--gold-light);
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(0,0,0,0.4);
-        }
+        /* Rest of the CSS remains the same until media queries */
         
-        button:active {
-            transform: translateY(0);
-            box-shadow: 0 2px 8px rgba(0,0,0,0.3);
-        }
-
-        .instagram-box {
-            border: 1px solid var(--gold-dark);
-            background: var(--brown-translucent);
-            backdrop-filter: blur(8px);
-            padding: 1.5rem;
-            width: 90%;
-            max-width: 500px;
-            font-size: 0.9rem;
-            letter-spacing: 1px;
-            line-height: 1.6;
-            margin: 0 auto;
-            color: #F5F5F5;
-        }
-
-        .instagram-handle {
-            font-weight: 600;
-            color: var(--gold);
-            text-decoration: none;
-            margin-top: 0.5rem;
-            transition: all 0.3s ease;
-        }
-        
-        .instagram-handle:hover {
-            color: var(--gold-light);
-        }
-        
-        .social-icons {
-            margin-top: 15px;
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-        }
-        
-        .social-icons a {
-            color: var(--gold);
-            font-size: 1.2rem;
-            transition: all 0.3s ease;
-        }
-        
-        .social-icons a:hover {
-            color: var(--gold-light);
-            transform: translateY(-3px);
-        }
-
         @media (max-width: 768px) {
             .logo {
                 font-size: 3.5rem;
@@ -302,34 +191,55 @@ You
     </div>
 
     <script>
-        // Generate stars dynamically with more randomness
         const starsContainer = document.getElementById('stars');
-        const numStars = 150; // Increased number of stars for a denser sky
+        const numStars = 200;
 
-        for (let i = 0; i < numStars; i++) {
+        function createStarCluster(centerX, centerY, count) {
+            for (let i = 0; i < count; i++) {
+                const star = document.createElement('div');
+                star.className = 'star';
+                
+                // Smaller, more realistic star sizes
+                const size = Math.random() * 1.5 + 0.3;
+                star.style.width = `${size}px`;
+                star.style.height = star.style.width;
+                
+                // Gaussian distribution around center for natural clustering
+                const angle = Math.random() * 2 * Math.PI;
+                const radius = Math.abs(Math.random() * 15 * (Math.random() > 0.7 ? 2 : 1));
+                const x = centerX + Math.cos(angle) * radius;
+                const y = centerY + Math.sin(angle) * radius;
+                
+                star.style.left = `${x}vw`;
+                star.style.top = `${y}vh`;
+                
+                star.style.opacity = Math.random() * 0.5 + 0.4;
+                star.style.animationDuration = `${Math.random() * 3 + 2}s`;
+                star.style.animationDelay = `${Math.random() * 2}s`;
+                
+                starsContainer.appendChild(star);
+            }
+        }
+
+        // Create multiple star clusters
+        createStarCluster(20, 30, 50);  // Top-left cluster
+        createStarCluster(70, 20, 40);  // Top-right cluster
+        createStarCluster(50, 70, 60);  // Bottom cluster
+        createStarCluster(30, 50, 30);  // Middle-left cluster
+
+        // Add some scattered stars
+        for (let i = 0; i < 20; i++) {
             const star = document.createElement('div');
             star.className = 'star';
-            
-            // Random size between 0.5px and 3px
-            const size = Math.random() * 2.5 + 0.5;
+            const size = Math.random() * 1 + 0.2;
             star.style.width = `${size}px`;
             star.style.height = star.style.width;
-            
-            // Random position with slight clustering effect
-            const clusterX = Math.random() > 0.5 ? Math.random() * 30 : Math.random() * 70; // Cluster in two regions
-            const clusterY = Math.random() * 100;
-            star.style.left = `${clusterX + (Math.random() - 0.5) * 20}vw`; // Add some spread around cluster
-            star.style.top = `${clusterY + (Math.random() - 0.5) * 20}vh`;
-            
-            // Random opacity and animation timing
-            star.style.opacity = Math.random() * 0.5 + 0.3;
-            star.style.animationDuration = `${Math.random() * 2 + 1.5}s`; // Random duration between 1.5s and 3.5s
-            star.style.animationDelay = `${Math.random() * 2}s`; // Random delay up to 2s
-            
+            star.style.left = `${Math.random() * 100}vw`;
+            star.style.top = `${Math.random() * 100}vh`;
+            star.style.opacity = Math.random() * 0.3 + 0.2;
             starsContainer.appendChild(star);
         }
 
-        // Form submission handling
         document.getElementById('signup-form').addEventListener('submit', function(e) {
             e.preventDefault();
             alert('Thank you for joining our waitlist. Expect exclusive updates soon.');
