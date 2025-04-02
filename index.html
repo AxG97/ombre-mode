@@ -1,3 +1,8 @@
+Site
+Aman Gill
+​
+You
+​
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,8 +17,8 @@
             --gold: #B8860B; /* Darker, richer gold */
             --gold-light: #DAA520;
             --gold-dark: #8B6914;
-            --brown-dark: #2F1F14; /* Dark brown for marbled background */
-            --brown-translucent: rgba(47, 31, 20, 0.9);
+            --brown-dark: #1A120B; /* Darker brown for night sky */
+            --brown-translucent: rgba(26, 18, 11, 0.9);
         }
         
         body {
@@ -49,13 +54,14 @@
             width: 100%;
             height: 100%;
             background: 
-                radial-gradient(circle at top right, rgba(184, 134, 11, 0.1), transparent 400px),
-                radial-gradient(circle at bottom left, rgba(139, 105, 20, 0.08), transparent 400px),
-                linear-gradient(45deg, #2F1F14, #3C2A1D); /* Subtle marbled effect */
+                radial-gradient(circle at top right, rgba(184, 134, 11, 0.05), transparent 400px),
+                radial-gradient(circle at bottom left, rgba(139, 105, 20, 0.03), transparent 400px),
+                linear-gradient(45deg, #1A120B, #26190F); /* Darker marbled effect for night sky */
             z-index: 0;
             opacity: 0.95;
         }
 
+        /* Starry Night Effect */
         .stars {
             position: fixed;
             top: 0;
@@ -63,37 +69,25 @@
             width: 100%;
             height: 100%;
             z-index: 0; /* Behind content */
-            pointer-events: none; /* Prevents interaction with stars */
+            pointer-events: none;
         }
 
-        .stars::before,
-        .stars::after {
-            content: '';
+        .star {
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: transparent;
+            background: var(--gold);
+            border-radius: 50%;
+            opacity: 0.5;
+            animation: twinkle 2s infinite ease-in-out;
         }
 
-        .stars::before {
-            background: radial-gradient(circle, var(--gold) 0.5px, transparent 1px) repeat;
-            background-size: 20px 20px;
-            opacity: 0.3;
-            animation: twinkle 3s infinite;
-        }
-
-        .stars::after {
-            background: radial-gradient(circle, var(--gold-light) 0.3px, transparent 0.8px) repeat;
-            background-size: 30px 30px;
-            opacity: 0.2;
-            animation: twinkle 4s infinite reverse;
+        .star:nth-child(odd) {
+            background: var(--gold-light);
+            animation-duration: 3s;
         }
 
         @keyframes twinkle {
-            0%, 100% { opacity: 0.2; }
-            50% { opacity: 0.5; }
+            0%, 100% { opacity: 0.2; transform: scale(0.7); }
+            50% { opacity: 0.8; transform: scale(1); }
         }
 
         .logo {
@@ -167,7 +161,7 @@
 
         button {
             background: var(--gold);
-            color: #2F1F14; /* Dark brown text for contrast */
+            color: #1A120B; /* Darker brown text for contrast */
             border: none;
             padding: 1rem 0;
             width: 100%;
@@ -277,7 +271,7 @@
 </head>
 <body>
     <div class="page-background"></div>
-    <div class="stars"></div>
+    <div class="stars" id="stars"></div>
     <div class="container">
         <div class="logo">Ombré Mode</div>
         
@@ -308,6 +302,34 @@
     </div>
 
     <script>
+        // Generate stars dynamically with more randomness
+        const starsContainer = document.getElementById('stars');
+        const numStars = 150; // Increased number of stars for a denser sky
+
+        for (let i = 0; i < numStars; i++) {
+            const star = document.createElement('div');
+            star.className = 'star';
+            
+            // Random size between 0.5px and 3px
+            const size = Math.random() * 2.5 + 0.5;
+            star.style.width = `${size}px`;
+            star.style.height = star.style.width;
+            
+            // Random position with slight clustering effect
+            const clusterX = Math.random() > 0.5 ? Math.random() * 30 : Math.random() * 70; // Cluster in two regions
+            const clusterY = Math.random() * 100;
+            star.style.left = `${clusterX + (Math.random() - 0.5) * 20}vw`; // Add some spread around cluster
+            star.style.top = `${clusterY + (Math.random() - 0.5) * 20}vh`;
+            
+            // Random opacity and animation timing
+            star.style.opacity = Math.random() * 0.5 + 0.3;
+            star.style.animationDuration = `${Math.random() * 2 + 1.5}s`; // Random duration between 1.5s and 3.5s
+            star.style.animationDelay = `${Math.random() * 2}s`; // Random delay up to 2s
+            
+            starsContainer.appendChild(star);
+        }
+
+        // Form submission handling
         document.getElementById('signup-form').addEventListener('submit', function(e) {
             e.preventDefault();
             alert('Thank you for joining our waitlist. Expect exclusive updates soon.');
