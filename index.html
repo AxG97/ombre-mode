@@ -9,33 +9,27 @@
         @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap');
         
         :root {
-            --gold: #D4AF37; /* True deep gold */
-            --gold-light: #E5C767;
-            --gold-dark: #BF9B30;
-            --black: #0A0A0A;
-            --black-light: #1E1E1E;
-            --black-translucent: rgba(10, 10, 10, 0.9);
-        }
-        
-html, body {
-            height: 100%;
-            margin: 0;
-            padding: 0;
-            overflow-x: hidden;
-            overflow-y: auto;
+            --gold: #B8860B; /* Darker, richer gold */
+            --gold-light: #DAA520;
+            --gold-dark: #8B6914;
+            --brown-dark: #2F1F14; /* Dark brown for marbled background */
+            --brown-translucent: rgba(47, 31, 20, 0.9);
         }
         
         body {
             font-family: 'Montserrat', sans-serif;
-            background: var(--black);
+            background: var(--brown-dark);
             color: var(--gold);
-            display: block;
+            min-height: 100vh;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
             text-align: center;
-            padding: 20px 0;
-        }
-        
-        .main-content {
-            padding: 20px 0;
+            overflow-x: hidden;
+            overflow-y: auto;
+            padding: 40px 0;
         }
 
         .container {
@@ -52,60 +46,55 @@ html, body {
             width: 100%;
             height: 100%;
             background: 
-                radial-gradient(circle at top right, rgba(212, 175, 55, 0.05), transparent 400px),
-                radial-gradient(circle at bottom left, rgba(212, 175, 55, 0.03), transparent 400px),
-                var(--black);
+                radial-gradient(circle at top right, rgba(184, 134, 11, 0.1), transparent 400px),
+                radial-gradient(circle at bottom left, rgba(139, 105, 20, 0.08), transparent 400px),
+                linear-gradient(45deg, #2F1F14, #3C2A1D); /* Subtle marbled effect */
             z-index: -1;
+            opacity: 0.95;
         }
 
         .logo {
             font-family: 'Cormorant Garamond', serif;
             font-size: 5rem;
-            letter-spacing: 3px;
+            letter-spacing: 4px;
             color: var(--gold);
             margin-bottom: 1.5rem;
             text-transform: uppercase;
             font-weight: 700;
-            width: 100%;
-            text-align: center;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+            text-shadow: 0 2px 6px rgba(0,0,0,0.5);
         }
 
         .coming-soon {
             font-size: 2.2rem;
             font-weight: 300;
-            letter-spacing: 8px;
+            letter-spacing: 10px;
             margin-bottom: 4rem;
             text-transform: uppercase;
-            color: #fff;
+            color: #F5F5F5; /* Off-white for contrast */
         }
 
         .signup-box {
-            background: rgba(10, 10, 10, 0.7);
-            border: 1px solid var(--gold);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            background: var(--brown-translucent);
+            border: 1px solid var(--gold-dark);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.4);
             padding: 3rem;
             width: 90%;
             max-width: 500px;
             margin: 0 auto 4rem;
-            text-align: center;
-            backdrop-filter: blur(5px);
+            backdrop-filter: blur(8px);
         }
 
         .signup-text {
             font-size: 1rem;
             margin: 0 auto 2rem;
             line-height: 1.8;
-            letter-spacing: 0.5px;
-            max-width: 100%;
-            padding: 0;
-            color: #fff;
+            letter-spacing: 1px;
+            color: #F5F5F5;
         }
 
         .input-group {
             margin: 0 auto 1.5rem;
             width: 100%;
-            padding: 0;
             position: relative;
         }
 
@@ -113,8 +102,8 @@ html, body {
             width: calc(100% - 2rem);
             padding: 1rem;
             background: transparent;
-            border: 1px solid var(--gold);
-            color: #fff;
+            border: 1px solid var(--gold-dark);
+            color: #F5F5F5;
             font-family: 'Montserrat', sans-serif;
             font-size: 0.9rem;
             margin: 0 auto 1rem;
@@ -124,18 +113,18 @@ html, body {
 
         input:focus {
             outline: none;
-            border-color: var(--gold-light);
-            box-shadow: 0 0 8px rgba(212, 175, 55, 0.4);
+            border-color: var(--gold);
+            box-shadow: 0 0 10px rgba(184, 134, 11, 0.3);
         }
 
         input::placeholder {
-            color: rgba(255, 255, 255, 0.6);
+            color: rgba(245, 245, 245, 0.6);
             text-align: center;
         }
 
         button {
             background: var(--gold);
-            color: var(--black);
+            color: #2F1F14; /* Dark brown text for contrast */
             border: none;
             padding: 1rem 0;
             width: 100%;
@@ -146,41 +135,37 @@ html, body {
             text-transform: uppercase;
             cursor: pointer;
             transition: all 0.3s ease;
-            margin: 0 auto;
-            display: block;
         }
 
         button:hover {
             background: var(--gold-light);
             transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.4);
         }
         
         button:active {
             transform: translateY(0);
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.3);
         }
 
         .instagram-box {
-            border: 1px solid var(--gold);
-            background: rgba(10, 10, 10, 0.7);
-            backdrop-filter: blur(5px);
+            border: 1px solid var(--gold-dark);
+            background: var(--brown-translucent);
+            backdrop-filter: blur(8px);
             padding: 1.5rem;
             width: 90%;
             max-width: 500px;
             font-size: 0.9rem;
-            letter-spacing: 0.5px;
+            letter-spacing: 1px;
             line-height: 1.6;
             margin: 0 auto;
-            text-align: center;
-            color: #fff;
+            color: #F5F5F5;
         }
 
         .instagram-handle {
             font-weight: 600;
             color: var(--gold);
             text-decoration: none;
-            display: inline-block;
             margin-top: 0.5rem;
             transition: all 0.3s ease;
         }
@@ -288,7 +273,7 @@ html, body {
         </div>
         
         <div class="signup-box">
-            <p class="signup-text">Be the first to know about our exclusive collections and launches. Enter your details below for updates.</p>
+            <p class="signup-text">Be the first to experience our exclusive collections of designer clothing and luxury watches. Join our waitlist for privileged updates.</p>
             
             <form id="signup-form">
                 <div class="input-group">
@@ -302,7 +287,7 @@ html, body {
         </div>
         
         <div class="instagram-box">
-            Follow <a href="https://instagram.com/ombremode" class="instagram-handle">@ombremode</a> for previews of upcoming collections and direct messaging.
+            Follow <a href="https://instagram.com/ombremode" class="instagram-handle">@ombremode</a> for exclusive previews and direct access.
             <div class="social-icons">
                 <a href="https://instagram.com/ombremode" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
                 <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
@@ -314,7 +299,7 @@ html, body {
     <script>
         document.getElementById('signup-form').addEventListener('submit', function(e) {
             e.preventDefault();
-            alert('Thank you for joining our waitlist. We\'ll be in touch soon with exclusive updates.');
+            alert('Thank you for joining our waitlist. Expect exclusive updates soon.');
             this.reset();
         });
     </script>
